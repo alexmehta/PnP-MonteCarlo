@@ -27,6 +27,7 @@ class FastMRIBrainData(Dataset):
         
         # extract test data
         data_list = np.load(pathlib.Path(__file__).parent.resolve() / 'fastmri_brain_info.npy', allow_pickle=True).item()['info']
+        print(pathlib.Path(__file__).parent.resolve() / 'fastmri_brain_info.npy')
 
         Random(self.split_seed).shuffle(data_list)
         num_train = round(len(data_list) * self.split[0] / np.sum(self.split))

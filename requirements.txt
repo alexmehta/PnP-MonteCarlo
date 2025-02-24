@@ -1,0 +1,10 @@
+matplotlib==3.10.0
+numpy==2.2.3
+pyehtplot==0.9.0
+scipy==1.15.2
+tensorflow
+torch
+torchvision
+tqdm
+wandb
+fvcore

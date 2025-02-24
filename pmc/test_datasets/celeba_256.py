@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import torchvision.transforms.functional as F
 from torch.utils.data import Dataset
 
-INDICES=[29876]
+INDICES=[273]
 
 class CelebA256TestData(Dataset):
 
@@ -21,7 +21,7 @@ class CelebA256TestData(Dataset):
         return len(self.indices)
 
     def __getitem__(self, i: int):
-        image_np = plt.imread(f'./test_images/{self.indices[i]:05}.jpg')
+        image_np = plt.imread(f'./test_images/{self.indices[i]:05}.png')
         image = torch.tensor(image_np).permute(2,0,1) / 255
         if self.grayscale:
             image = F.rgb_to_grayscale(image)

@@ -156,7 +156,7 @@ class PMCInference(ABC):
             if self.callbacks is not None:
                 for callback in self.callbacks:
                     callback.on_batch_start(self, batch, batch_idx)
-
+            print(f'Processing batch {batch_idx}... y shape {y.shape}, x shape {x.shape}')
             # run algorithm            
             xrecons, xdrift_recons = self.sample(
                                         n_samples,
